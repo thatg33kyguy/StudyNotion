@@ -1,98 +1,36 @@
+StudyNotion - An EdTech PlatformStudyNotion is a full-stack Education Technology (EdTech) web application built with the MERN stack. It serves as an innovative platform where instructors can create, manage, and publish courses. Students can enroll in these courses, track their progress, and make payments securely. The application is designed to be robust, scalable, and user-friendly.🌐 Live DemoFrontend: https://studynotion-client.vercel.app/Backend: https://studynotion-server.vercel.app/✨ FeaturesUser Authentication: Secure user registration and login for Students, Instructors, and Admins using JWT.Course Management: Instructors can create, edit, and publish courses with detailed sections and lessons.Student Dashboard: Students can view their enrolled courses, track their progress, and manage their profiles.Instructor Dashboard: A comprehensive dashboard for instructors to monitor course statistics, total students, and income with visually appealing charts.Payment Integration: Secure payment processing for course enrollment powered by Razorpay.Cloud Media Storage: Course media (videos, thumbnails) is uploaded and securely stored on Cloudinary.Dynamic Profile Pictures: Automatically generates unique user profile pictures using the Dicebear API.Admin Panel: A dedicated panel for Admins to manage course categories.📸 ScreenshotsLanding PageLogin PageDashboardCourse Page🛠️ Technologies UsedFrontendReact.js: A JavaScript library for building user interfaces.Redux Toolkit: For state management.Tailwind CSS: For styling the application.React Router: For client-side routing.BackendNode.js: JavaScript runtime environment.Express.js: A web application framework for Node.js.MongoDB: A NoSQL database for storing application data.Mongoose: An ODM library for MongoDB and Node.js.Services & APIsCloudinary: For media storage and management.Razorpay: For secure payment processing.Dicebear: For generating user avatars.Nodemailer: For sending automated emails (e.g., OTP verification, password reset).🚀 Getting StartedFollow these instructions to set up the project on your local machine.1. PrerequisitesNode.js (v14 or higher)npm (Node Package Manager)MongoDB (local instance or a cloud-hosted one like MongoDB Atlas)2. Clone the Repositorygit clone [https://github.com/thatg33kyguy/StudyNotion.git](https://github.com/thatg33kyguy/StudyNotion.git)
+cd StudyNotion
+3. Install DependenciesInstall the required packages for both the client and the server.# Install frontend dependencies
+npm install
 
----
+# Install backend dependencies
+cd server
+npm install
+cd ..
+4. Set Up Environment VariablesCreate a .env file in the server directory and add the following variables. Replace the placeholder values with your actual credentials.# Port for the backend server
+PORT=4000
 
-````markdown
-# StudyNotion
+# Your MongoDB Connection URL
+MONGODB_URL="mongodb+srv://<user>:<password>@cluster-url/studynotion"
 
-Study Notion is an ED Tech (Education Technology) web application developed using the MERN stack. StudyNotion is an innovative EdTech platform where instructors can upload their courses and track their progress through visually appealing pie charts created using the Chart.js npm package. The website is built on ReactJS, TailwindCSS, with backend support provided by NodeJS (ExpressJS) and MongoDB. For payment processing, StudyNotion utilizes Razorpay. Media data is securely stored on Cloudinary servers. Additionally, the website integrates Dicebear's API to automatically generate unique profile pictures for users.
+# A long, random, and secret string for JWT
+JWT_SECRET="your-super-secret-key"
 
-## System Architecture
+# Frontend URL for CORS
+CORS_ORIGIN="http://localhost:3000"
 
-![System Architecture Diagram](path-to-your-image.png)
+# Nodemailer credentials for sending emails
+MAIL_HOST="smtp.gmail.com"
+MAIL_USER="your-email@gmail.com"
+MAIL_PASS="your-email-app-password"
 
-**Front-end**  
-- ReactJS  
-- UI Components  
-- API calls  
+# Cloudinary credentials
+CLOUD_NAME="your-cloudinary-cloud-name"
+API_KEY="your-cloudinary-api-key"
+API_SECRET="your-cloudinary-api-secret"
 
-**Back-end**  
-- NodeJS  
-- ExpressJS  
-- API Endpoints  
-
-**Database**  
-- MongoDB  
-- Collections  
-- Documents  
-
-## Features
-
-- **User Authentication**: StudyNotion provides secure user registration and authentication using JWT (JSON Web Tokens). Users can sign up, log in, and manage their profiles with ease.  
-- **Courses and Lessons**: Instructors can create and edit courses. Students can enroll in courses, access course materials, and track their progress.  
-- **Progress Tracking**: StudyNotion allows students to track their progress in enrolled courses. They can view completed lessons, scores on quizzes and assignments, and overall course progress.  
-- **Payment Integration**: StudyNotion integrates with Razorpay for payment processing. Users can make secure payments for course enrollment and other services using various payment methods supported by Razorpay.  
-- **Search Functionality**: Users can easily search for courses, lessons, and resources using the built-in search feature. This makes it convenient to find relevant content quickly.  
-- **Instructor Dashboard**: Instructors have access to a comprehensive dashboard to view information about their courses, students, and income. The dashboard provides charts and visualizations to present data clearly and intuitively. Instructors can monitor the total number of students enrolled in each course, track course performance, and view their income generated from course sales.
-
-## Technologies Used
-
-- **Frontend**: ReactJS, TailwindCSS  
-- **Backend**: ExpressJS, NodeJS, MongoDB  
-- **Payment Processing**: Razorpay  
-- **Frontend Hosting**: Vercel  
-- **Backend Hosting**: Render  
-- **Media Data Storage**: Cloudinary  
-- **Profile Picture Generation**: Dicebear API  
-
-## Screenshots
-
-![Landing Page](path-to-your-image.png)
-
-![Login Page](path-to-your-image.png)
-
-## Important
-
-- **Backend** is in the server folder.
-- First, create the categories (e.g., web dev, Python, etc.). Without categories, courses cannot be added. To create categories, create an Admin account and go to the dashboard, then the admin panel.
-- To create an Admin account: first sign up with a student or instructor account, then go to your Database under the users model and change that `accountType` to `Admin`.
-
-## Installation
-
-1. **Clone the repository to your local machine.**
-
-   ```bash
-   git clone https://github.com/Abhay-yadav966/StudyNotion.git
-````
-
-2. **Install the required packages.**
-
-   ```bash
-   cd StudyNotion
-   npm install
-
-   cd server
-   npm install
-   ```
-
-3. **Set up the environment variables:**
-
-   Create a `.env` file in the root directory and `/server` directory. Add the required environment variables, such as database connection details, JWT secret, and other necessary configurations.
-
-4. **Start the development server.**
-
-   ```bash
-   npm run dev
-   ```
-
-5. **Open the project in your browser at** [http://localhost:3000](http://localhost:3000) **to view your project.**
-
-You can add your own `tailwind.config.js` file to customize your Tailwind setup.
-
-## Contributions
-
-Contributions are welcome! If you have any suggestions or find any issues, please feel free to open an issue or a pull request.
-
-## Authors
-
-Rajprateem Nath
-NIT SILCHAR
+# Razorpay credentials
+RAZORPAY_KEY="your-razorpay-key-id"
+RAZORPAY_SECRET="your-razorpay-key-secret"
+5. Start the Development ServerThis command will start both the frontend and backend servers concurrently.npm run dev
+Your application should now be running at http://localhost:3000.📌 Important Setup NotesBackend Location: All backend code is located in the /server folder.Creating an Admin Account: To access the admin panel and create course categories, you must first create an Admin account.Sign up for a new account as a "Student" or "Instructor".Go to your MongoDB database, find the new user in the users collection.Manually change the accountType field for that user from "Student" or "Instructor" to "Admin".Creating Categories: You must create at least one course category from the admin panel before an instructor can add a new course.🤝 ContributingContributions are welcome! If you have any suggestions or find any issues, please feel free to open an issue or a pull request.✍️ Authorsthatg33kyguy

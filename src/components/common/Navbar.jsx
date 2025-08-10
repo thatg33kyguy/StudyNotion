@@ -92,7 +92,7 @@ const Navbar = () => {
                                                     
                                                         {/* links */}
                                                         {
-                                                            subLinks.length ? (
+                                                           Array.isArray(subLinks) && subLinks.length > 0 ?  (
                                                                 subLinks.map( (element, index) => {
                                                                     return(
                                                                         <Link key={index} to={`/catalog/${element.name.split(" ").join("-").toLowerCase()}`} >
